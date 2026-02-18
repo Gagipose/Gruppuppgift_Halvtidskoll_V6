@@ -17,3 +17,4 @@ interface DayStats {
   totalCheckIns: number;
 }
 
+export type {CheckIn}
