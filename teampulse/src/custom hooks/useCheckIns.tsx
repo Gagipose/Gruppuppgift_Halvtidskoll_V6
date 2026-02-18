@@ -4,7 +4,7 @@ import type { CheckIn } from "../types";
 
 const initialState: CheckIn[] = []
 
-export default function useCheckIns() {
+function useCheckIns() {
   const [state, dispatch] = useReducer(checkInReducer, initialState);
 
   const addCheckIn = (data: Omit<CheckIn, "id" | "timestamp">) => {
@@ -21,3 +21,5 @@ export default function useCheckIns() {
 
   return {state, addCheckIn, removeCheckIn, clearDay}
 }
+
+export default useCheckIns

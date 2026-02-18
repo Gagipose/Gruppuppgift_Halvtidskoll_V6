@@ -17,4 +17,4 @@ interface DayStats {
   totalCheckIns: number;
 }
 
-export type {CheckIn}
+export type {CheckIn, DayStats, Mood}

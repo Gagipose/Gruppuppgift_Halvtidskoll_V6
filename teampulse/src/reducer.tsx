@@ -22,7 +22,7 @@ function checkInReducer (state: CheckIn[], action: CheckInAction) {
         name: action.payload.name,
         mood: action.payload.mood,
         energy: action.payload.energy,
-        comment: action.payload.comment ? action.payload.comment : null,
+        comment: action.payload.comment,
         timestamp: new Date()
       }]
     case "REMOVE_CHECKIN": 
