@@ -14,6 +14,7 @@ type CheckInAction =
  | { type: "CLEAR_DAY"; payload: { date: string } };
 
 function checkInReducer (state: CheckIn[], action: CheckInAction) {
+  let today: string
   switch (action.type) {
     case "ADD_CHECKIN":
       return [...state, {
@@ -22,12 +23,12 @@ function checkInReducer (state: CheckIn[], action: CheckInAction) {
         mood: action.payload.mood,
         energy: action.payload.energy,
         comment: action.payload.comment ? action.payload.comment : null,
-        timeStamp: Date.now()
+        timestamp: new Date()
       }]
     case "REMOVE_CHECKIN": 
       return state.filter(item => item.id !== action.payload.id);
     case "CLEAR_DAY":
-      const today: string = new Date().toLocaleDateString("sv-SE");
+      today = new Date().toLocaleDateString("sv-SE");
       return state.filter(item => item.timestamp.toLocaleDateString("sv-SE") !== today);
 
     default:
