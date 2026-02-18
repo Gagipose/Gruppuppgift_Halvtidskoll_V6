@@ -1,5 +1,4 @@
 import type { CheckIn } from "./types";
-import { useReducer } from "react";
 
 // Implementera en checkInReducer som hanterar följande actions:
 // • ADD_CHECKIN – Lägger till en ny check-in
