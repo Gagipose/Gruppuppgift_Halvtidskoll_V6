@@ -19,7 +19,7 @@ function useCheckIns() {
     dispatch({type: "CLEAR_DAY", payload: {date: date}})
   }
 
-  return {state, addCheckIn, removeCheckIn, clearDay}
+  return {allCheckIns: state, addCheckIn, removeCheckIn, clearDay}
 }
 
 export default useCheckIns

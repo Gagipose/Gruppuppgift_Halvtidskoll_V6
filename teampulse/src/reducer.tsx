@@ -30,7 +30,6 @@ function checkInReducer (state: CheckIn[], action: CheckInAction) {
     case "CLEAR_DAY":
       today = new Date().toLocaleDateString("sv-SE");
       return state.filter(item => item.timestamp.toLocaleDateString("sv-SE") !== today);
-
     default:
       return state
   }
